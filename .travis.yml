@@ -1,0 +1,16 @@
+language: c
+install:
+    - sudo apt-get install zip
+script:
+    - sudo wget https://github.com/Kopernicus/KopernicusExamples/archive/master.zip
+    - sudo zip -d master.zip '*.yml'
+    - sudo mv master.zip ../KopernicusExamples.zip
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: 81f5d3c19a6882e73623154eec4926528f51503f
+  file: KopernicusExamples.zip
+  on:
+    repo: Kopernicus/KopernicusExamples
+    tags: true
+    all_branches: true
