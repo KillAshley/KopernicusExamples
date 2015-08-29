@@ -1,6 +1,10 @@
 language: c
-install: sudo apt-get install zip
-script: sudo ./build.sh
+install:
+    - sudo apt-get install zip
+script:
+    - sudo wget https://github.com/Kopernicus/Kopernicus/archive/master.zip
+    - sudo zip -d master.zip ".travis.yml"
+    - sudo mv master.zip ../KopernicusExamples.zip
 deploy:
   provider: releases
   skip_cleanup: true
