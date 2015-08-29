@@ -3,7 +3,7 @@ install:
     - sudo apt-get install zip
 script:
     - sudo wget https://github.com/Kopernicus/Kopernicus/archive/master.zip
-    - sudo zip -d master.zip ".travis.yml"
+    - sudo zip -d master.zip '*.yml'
     - sudo mv master.zip ../KopernicusExamples.zip
 deploy:
   provider: releases
