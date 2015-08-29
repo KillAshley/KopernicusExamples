@@ -1,6 +1,6 @@
 language: c
 install: sudo apt-get install zip
-script: ./build.sh
+script: sudo ./build.sh
 deploy:
   provider: releases
   skip_cleanup: true
