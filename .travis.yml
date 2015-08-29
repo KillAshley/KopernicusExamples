@@ -1,0 +1,17 @@
+language: c
+install:
+    - sudo apt-get install zip
+script:
+    - sudo wget https://github.com/Kopernicus/KopernicusExamples/archive/master.zip
+    - sudo zip -d master.zip '*.yml'
+    - sudo mv master.zip ../KopernicusExamples.zip
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvmZioQOLF9/6tHpUMgxh\neSkFBSJ/uGS9+Qq3hKoQMuqghuynWFglY+XBYiYKx3URnMFeFFW/RFdROYJhcGO7\nRiF7R+kKThwwa1KTjrpq44btuV1Gk/8FmFyzOgEJiFOC8OWm1BElbrnBuYRa21i5\nKtiYjfX4rzBg6LuPXMLjemZbkbtgVRSt4BQZH3t8B5+9iQ7MojV2Fws0cJhbrfUc\n5NSY42vKPCGXTZP9XUgfe94zy7XD9/yHChT0g/mF0W4qIgIsEDOUPOOByL7l0kFL\n34HY6B3rAue0niH8s/EIOyLxe0muKM9e/v73jAKtfCKG7i9UFtKirKADXdomEIYz\nuUoUWtbQsJgMMROr9W8REurE0U1hkMYAyS/zijTf9/soKkR1By52ipOYwbnfIIrX\nV6wBQxbowqwDyG45HXamJKvbKGF16KHf3bMDR/dpHtre7c0n0PvUHtqCWZjGACEA\nW2aJzb15GTLzx0FkYdOn2KkzOjGgckKkDzPgZhaoUWMsW/elHMrWKbEoUCr6ht6W\nq8DQrbbJc54iEog6jYuUf1VHQ87xqI8OV92E6X0a/Ui5QBzzygzFvcN6s660UNYY\nrKJlYTNVlse7ALWK06pr2jFuy60yfG3cO6ubRiC6KF9hnSwDnclJie8G1GP5OQO8\n4Hty2zD5bkKuS3wYExArR5ECAwEAAQ==
+  file: KopernicusExamples.zip
+  on:
+    repo: Kopernicus/KopernicusExamples
+    tags: true
+    all_branches: true
